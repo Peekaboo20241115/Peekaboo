@@ -61,7 +61,7 @@ def test_obfuscate(p, q, is_fvp, Cycles_number, dataset, test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
             print("Jigsaw+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc_Jigsaw_plus.append(acc)
         
@@ -78,7 +78,7 @@ def test_obfuscate(p, q, is_fvp, Cycles_number, dataset, test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
             print("SAP+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc_SAP_plus.append(acc)
         
@@ -92,7 +92,7 @@ def test_obfuscate(p, q, is_fvp, Cycles_number, dataset, test_times):
             deduce_sp_params={}
             deduce_sp_params["delta"]=0.95
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
             print("FMA, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc_FMA.append(acc)
         
@@ -112,7 +112,7 @@ def test_obfuscate(p, q, is_fvp, Cycles_number, dataset, test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params, countermeasure_params)
             print("SP&Jigsaw+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc_SP_Jigsaw_plus.append(acc)
         
@@ -129,7 +129,7 @@ def test_obfuscate(p, q, is_fvp, Cycles_number, dataset, test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SPSAP+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc_SP_SAP_plus.append(acc)
 

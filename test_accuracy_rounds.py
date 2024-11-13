@@ -47,7 +47,7 @@ def test_comparison(Cycles_number,is_fvp,dataset,test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("Jigsaw+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/comparison/Jigsaw_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_cycles_numer_"+str(cycles_number)+".pkl","wb") as f:
@@ -67,7 +67,7 @@ def test_comparison(Cycles_number,is_fvp,dataset,test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SAP+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/comparison/SAP_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_cycles_numer_"+str(cycles_number)+".pkl","wb") as f:
@@ -84,7 +84,7 @@ def test_comparison(Cycles_number,is_fvp,dataset,test_times):
             deduce_sp_params={}
             deduce_sp_params["delta"]=0.95
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("FMA, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/comparison/FMA_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_cycles_numer_"+str(cycles_number)+".pkl","wb") as f:
@@ -107,7 +107,7 @@ def test_comparison(Cycles_number,is_fvp,dataset,test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SP&Jigsaw+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/comparison/SPJigsaw_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_cycles_numer_"+str(cycles_number)+".pkl","wb") as f:
@@ -127,7 +127,7 @@ def test_comparison(Cycles_number,is_fvp,dataset,test_times):
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SPSAP+, cycle_number:",cycles_number," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/comparison/SPSAP_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_cycles_numer_"+str(cycles_number)+".pkl","wb") as f:

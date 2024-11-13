@@ -20,11 +20,10 @@ def simulate_leakage(observed_query_number_per_timeslot = 300, observed_timeslot
     with open(dataset_path,"rb") as f:
         dataset = pickle.load(f)
 
-    # _ is a list of keywords, total_doc is a list of files, each file is a list of number representing the index of keywords
-    # aux is dict which contains key "all_documents_size"(the list of the size of all documents), 
-    # "timestamps"(the added timestamp of files), "stems_to_words"(unused) and "trends"(the query frequency of keywords).
+    # keywords_list is a list of keywords, total_doc is a list of files, each file is a list of number representing the index of keywords
+    # kws_count is a list of the number of files that contain keywords, total_doc is a list of files.
+    # doc_size is a list of the number of bytes of the files, doc_timestamp is a list that records when the files were added.
     if dataset_path == './datasets/lucene.pkl' or dataset_path == './datasets/enron.pkl':
-
         keywords_list = dataset["keywords_list"]
         trend_matrix = dataset["keywords_trend"]
         kws_count = dataset["keywords_count"]
@@ -85,7 +84,7 @@ def simulate_leakage(observed_query_number_per_timeslot = 300, observed_timeslot
     add_file_end_time = add_file_begin_time + timedelta(days=1)
     end_index, day_doc = read_file_day(total_doc, doc_timestamp, doc_size, add_file_begin_time, add_file_end_time, 0, kws_universe_dic, kws_universe_size)
     client_file_num, attacker_doc_num = file_allocation(client_doc_unobfuscated, client_doc_server, attacker_doc, attacker_doc_obfuscated, client_file_num, attacker_doc_num, day_doc, deleted_email_percent, is_fvp)
-    for day in range(1, storage_time_limit):
+    for _ in range(1, storage_time_limit):
         add_file_end_time = add_file_end_time + timedelta(days=1)
         end_index, day_doc = read_file_day(total_doc, doc_timestamp, doc_size, add_file_begin_time, add_file_end_time, end_index, kws_universe_dic, kws_universe_size)
         client_file_num, attacker_doc_num = file_allocation(client_doc_unobfuscated, client_doc_server, attacker_doc, attacker_doc_obfuscated, client_file_num, attacker_doc_num, day_doc, deleted_email_percent, is_fvp)

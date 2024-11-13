@@ -32,12 +32,10 @@ def run_single_attack(
     kws_extraction = dataset_params["kws_extraction"]
 
     if dataset_name == "enron":
-        dataset_path = './datasets/newenron-full.pkl'
-        dataset_path = './datasets/newenron-full.pkl'
+        dataset_path = './datasets/enron.pkl'
         begin_data = "1 Feb 2000 00:00:00 +0000"
     elif dataset_name == "lucene":
-        dataset_path = './datasets/newlucene.pkl'
-        dataset_path = './datasets/newlucene.pkl'
+        dataset_path = './datasets/lucene.pkl'
         begin_data = "1 Feb 2002 00:00:00 +0000"
     else:
         assert False, "Invalid dataset_name"
@@ -164,8 +162,12 @@ def run_single_attack(
         result = sap.attack()
         time_overhead = time.time() - begin_time
         acc = cal_accuracy(M, query_id_multi_window_list, result, observed_query_number_per_timeslot)
-        print("Sap+ accuracy:", acc)
-        print("Sap+ time overhead:", time_overhead)
+        if is_truth:
+            print("Sap+ with SP accuracy:", acc)
+            print("Sap+ with SP time overhead:", time_overhead)
+        else:
+            print("Sap+ accuracy:", acc)
+            print("Sap+ time overhead:", time_overhead)
     elif attack_name == 'FMA':
         
         begin_time = time.time()
@@ -203,8 +205,12 @@ def run_single_attack(
         result = jigsaw.attack_step_3()
         time_overhead = time.time() - begin_time
         acc = cal_accuracy(M, query_id_multi_window_list, result, observed_query_number_per_timeslot)
-        print("step3 acc:",acc)
-        print("Jigsaw+ time overhead:", time_overhead)
+        if is_truth:
+            print("Jigsaw+ with SP accuracy:",acc)
+            print("Jigsaw+ with SP time overhead:", time_overhead)
+        else:
+            print("Jigsaw+ accuracy:",acc)
+            print("Jigsaw+ time overhead:", time_overhead)
     
     return acc, ari_multi_window, time_overhead
 

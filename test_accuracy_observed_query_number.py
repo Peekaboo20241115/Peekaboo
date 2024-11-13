@@ -48,7 +48,7 @@ def test_query_number(Observed_query_number_per_timeslot,is_fvp,dataset,test_tim
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("Jigsaw+, observe_days:",observe_days," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/query_number/Jigsaw_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_observed_query_number_per_timeslot_"+str(observed_query_number_per_timeslot)+".pkl","wb") as f:
@@ -68,7 +68,7 @@ def test_query_number(Observed_query_number_per_timeslot,is_fvp,dataset,test_tim
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SAP+, observe_days:",observe_days," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/query_number/SAP_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_observed_query_number_per_timeslot_"+str(observed_query_number_per_timeslot)+".pkl","wb") as f:
@@ -85,7 +85,7 @@ def test_query_number(Observed_query_number_per_timeslot,is_fvp,dataset,test_tim
             deduce_sp_params={}
             deduce_sp_params["delta"]=0.95
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("FMA, observe_days:",observe_days," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/query_number/FMA_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_observed_query_number_per_timeslot_"+str(observed_query_number_per_timeslot)+".pkl","wb") as f:
@@ -108,7 +108,7 @@ def test_query_number(Observed_query_number_per_timeslot,is_fvp,dataset,test_tim
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SP&Jigsaw+, observe_days:",observe_days," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/query_number/SPJigsaw_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_observed_query_number_per_timeslot_"+str(observed_query_number_per_timeslot)+".pkl","wb") as f:
@@ -128,7 +128,7 @@ def test_query_number(Observed_query_number_per_timeslot,is_fvp,dataset,test_tim
             deduce_sp_params["p_q_threshold"]=0.95
             deduce_sp_params["layer_match"] = 5
             attack_params["deduce_sp_params"]=deduce_sp_params
-            acc,ari = run_single_attack(leakage_params,dataset_params,attack_params)
+            acc,ari,_ = run_single_attack(leakage_params,dataset_params,attack_params)
             print("SPSAP+, observe_days:",observe_days," Acc:",acc," Ari:",ari)
             Acc.append(acc)
         with open("./results/query_number/SPSAP_plus_"+dataset+"_is_fvp_"+str(int(is_fvp))+"_observed_query_number_per_timeslot_"+str(observed_query_number_per_timeslot)+".pkl","wb") as f:
