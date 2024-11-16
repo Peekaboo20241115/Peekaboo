@@ -2,7 +2,7 @@
 
 This is the python implementations of the attacks presented in :
 
-"Just a Peekaboo: Passive Attacks Against DSSE via Snapshot Observations"
+"Peekaboo, I See Your Queries: Passive Attacks Against DSSE via Snapshot Observations"
 
 Run the python files with name starting with ``test_*.py`` to simulate the attack under different situations.
 
