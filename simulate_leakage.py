@@ -6,7 +6,7 @@ from countermeasures import padding, obfuscate
 
 def simulate_leakage(observed_query_number_per_timeslot = 300, observed_timeslot_number_per_cycle = [7,7,7,7], unobserved_timeslot_num_per_cycle = [7,7,7,7], \
                 cycles_number = 4, deleted_email_percent = 0.1, storage_time_limit = 90, kws_universe_size = 1000, \
-                dataset_path = './datasets/newlucene.pkl', is_fvp = False, \
+                dataset_path = './datasets/lucene.pkl', is_fvp = False, \
                 begin_date = "1 Jun 2000 00:00:00 +0000", tau_client = 0, tau_attacker = 0, kws_extraction = 'sorted', countermeasure_info = {'name':None}, debug_info = False):
     begin_running_time = time.time()
     if debug_info==True:

@@ -51,6 +51,8 @@ This file folder contains the main attack algorithm code.
 
 ``test_accuracy_observed_query_number.py``: tests the effect of the number of observed queries on the attack accuracy.
 
+``test_accuracy_observed_query_number_no_update.py``: tests the effect of the number of observed queries on the attack accuracy and attacker without updating.
+
 ``test_accuracy_offline_days.py``: tests the effect of the number of offline day on the attack accuracy.
 
 ``test_accuracy_rounds.py``: tests the effect of the number of round on the attack accuracy.
